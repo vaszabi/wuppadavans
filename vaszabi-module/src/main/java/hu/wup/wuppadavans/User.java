@@ -2,7 +2,7 @@ package hu.wup.wuppadavans;
 
 import java.util.ArrayList;
 
-public class User {
+public class User extends Account {
 
 	
 	public String firstname, lastname, gender;
@@ -16,7 +16,9 @@ public class User {
                 ", First name='" + firstname + '\'' +
                 ", Last name='" + lastname + '\'' +
                 ", Age=" + age +
-                ", Gender='" + gender + '\'' + 
+                ", Gender='" + gender + '\'' +
+				"' Account number='" +accountNumber + '\''+
+				"' Currency='"+currency+'\'' +
                 
                 "}\n";
     }
