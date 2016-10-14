@@ -9,11 +9,11 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account details{" +
+        return "\nAccount details{" +
                 "' Account number='" +accountNumber + '\''+
                 "' Currency='"+currency+'\'' +
 
-                "}\n";
+                "}";
     }
 
 

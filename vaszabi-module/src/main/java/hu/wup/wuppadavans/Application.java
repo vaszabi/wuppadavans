@@ -11,7 +11,6 @@ public class Application {
         long limit;
         Scanner scanner = new Scanner(System.in);
         List<User> userList = new ArrayList<>();
-        List<Account> accountList = new ArrayList<>();
 
         System.out.println("Number of users:");
         long userAmount = scanner.nextLong();
@@ -28,22 +27,24 @@ public class Application {
             user.setAge(scanner.nextInt());
             System.out.println(i + 1 + ". User\nGender:");
             user.setGender(scanner.next());
-            userList.add(user);
+
             System.out.println(i + 1 + ". User\nAccount quantity:");
             limit = scanner.nextLong();
-            for (i = 0; i < limit; i++) {
+            List<Account> accountList = new ArrayList<>();
+
+            for (int accountQuantity = 0; accountQuantity < limit; accountQuantity++) {
                 Account account = new Account();
-                System.out.println(i + 1 + ". Account number:");
+                System.out.println(accountQuantity + 1 + ". Account number:");
                 account.setAccountNumber(scanner.next());
-                System.out.println(i + 1 + ". Account's currency:");
+                System.out.println(accountQuantity + 1 + ". Account's currency:");
                 account.setCurrency(scanner.next());
 
                 accountList.add(account);
 
             }
-
+            user.setAccounts(accountList);
+            userList.add(user);
         }
-        accountList.forEach(System.out::println);
         userList.forEach(System.out::println);
 
     }
