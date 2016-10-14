@@ -5,7 +5,8 @@ package hu.wup.wuppadavans;
  */
 public class Account {
 
-    public String accountNumber, currency;
+    private String accountNumber;
+    private String currency;
 
     @Override
     public String toString() {

@@ -4,9 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@RestController
+@EnableAutoConfiguration
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
+
+        SpringApplication.run(Application.class, args);
 
         long limit;
         Scanner scanner = new Scanner(System.in);

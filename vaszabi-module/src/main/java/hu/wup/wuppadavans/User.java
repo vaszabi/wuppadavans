@@ -6,9 +6,11 @@ import java.util.List;
 public class User extends Account {
 
 
-    public String firstname, lastname, gender;
-    public int age;
-    public long id;
+    private String firstname;
+    private String gender;
+    private String lastname;
+    private int age;
+    private long id;
     private List<Account> accounts;
 
     public List<Account> getAccounts() {
