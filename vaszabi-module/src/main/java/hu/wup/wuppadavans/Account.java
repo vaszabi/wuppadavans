@@ -1,8 +1,9 @@
 package hu.wup.wuppadavans;
 
-/**
- * Created by szvarga on 2016. 10. 07..
- */
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
 public class Account {
 
     private String accountNumber;
