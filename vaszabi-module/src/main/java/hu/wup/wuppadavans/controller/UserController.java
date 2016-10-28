@@ -21,11 +21,22 @@ public class UserController {
     public List<User> getUser() {
         return userService.getList();
     }
+
     @RequestMapping(value = "createusers", method = RequestMethod.POST)
     @ResponseBody
     public void createUsers(@RequestBody User user) {
         userService.getList().add(user);
-}
+    }
+
+
+
+    @RequestMapping(value = "delete/{id}/", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteUser(@PathVariable("id") Long id) {
+
+        userService.getList().remove(id);
+    }
+
 
     public void magic() {
 
