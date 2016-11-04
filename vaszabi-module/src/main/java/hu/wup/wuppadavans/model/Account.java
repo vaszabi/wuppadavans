@@ -1,8 +1,4 @@
-package hu.wup.wuppadavans;
-
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-
+package hu.wup.wuppadavans.model;
 
 public class Account {
 

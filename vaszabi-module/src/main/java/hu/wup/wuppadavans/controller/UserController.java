@@ -1,9 +1,9 @@
 package hu.wup.wuppadavans.controller;
 
-import hu.wup.wuppadavans.Account;
-import hu.wup.wuppadavans.User;
-import hu.wup.wuppadavans.Application;
-import hu.wup.wuppadavans.UserService;
+import hu.wup.wuppadavans.model.Account;
+import hu.wup.wuppadavans.model.User;
+import hu.wup.wuppadavans.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,31 +14,33 @@ import java.util.Scanner;
 @RestController
 public class UserController {
 
-    private UserService userService = new UserService();
+    private UserService userService;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "getusers", method = RequestMethod.GET)
     @ResponseBody
     public List<User> getUser() {
-        return userService.getList();
+        return userService.getUsers();
     }
 
     @RequestMapping(value = "createusers", method = RequestMethod.POST)
     @ResponseBody
     public void createUsers(@RequestBody User user) {
-        userService.getList().add(user);
+        userService.createUser(user);
     }
 
 
-    @RequestMapping(value = "delete/{id}/", method = RequestMethod.DELETE)
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteUser(@PathVariable("id") Long id) {
-
-        while(id != getId() && userService.getList() != null ){
-            deleteUser();
-        }
+        userService.delete(id);
     }
 
-
+    //TODO aharcsa 20161104.: remove this shit
     public void magic() {
 
         long limit;

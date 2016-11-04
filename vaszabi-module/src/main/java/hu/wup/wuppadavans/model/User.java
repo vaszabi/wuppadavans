@@ -1,9 +1,5 @@
-package hu.wup.wuppadavans;
+package hu.wup.wuppadavans.model;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class User extends Account {
