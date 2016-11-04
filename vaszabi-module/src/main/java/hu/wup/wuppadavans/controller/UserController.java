@@ -29,12 +29,13 @@ public class UserController {
     }
 
 
-
     @RequestMapping(value = "delete/{id}/", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteUser(@PathVariable("id") Long id) {
 
-        userService.getList().remove(id);
+        while(id != getId() && userService.getList() != null ){
+            deleteUser();
+        }
     }
 
 
