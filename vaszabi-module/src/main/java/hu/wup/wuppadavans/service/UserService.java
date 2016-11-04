@@ -29,4 +29,14 @@ public interface UserService {
      * @param user
      */
     void createUser(User user);
+
+    //TODO javadoc
+
+    /**
+     *
+     * @return user
+     */
+    User getOneUser(Long id);
+
+    void modify(Long id, User user);
 }

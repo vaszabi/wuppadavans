@@ -23,7 +23,7 @@ public class UserController {
 
     @RequestMapping(value = "getusers", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> getUser() {
+    public List<User> getUsers() {
         return userService.getUsers();
     }
 
@@ -38,6 +38,18 @@ public class UserController {
     @ResponseBody
     public void deleteUser(@PathVariable("id") Long id) {
         userService.delete(id);
+    }
+
+    @RequestMapping(value = "getuser/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public User getUser(@PathVariable("id") Long id) {
+       return userService.getOneUser(id);
+    }
+
+    @RequestMapping(value = "modify/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public void modifyUser(@PathVariable("id") Long id,@RequestBody User user) {
+        userService.modify(id, user);
     }
 
     //TODO aharcsa 20161104.: remove this shit

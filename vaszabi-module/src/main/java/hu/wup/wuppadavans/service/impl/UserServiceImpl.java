@@ -36,4 +36,30 @@ public class UserServiceImpl implements UserService {
     public void createUser(User user) {
         list.add(user);
     }
+
+    @Override
+    public User getOneUser(Long id) {
+
+        for (User user : list) {
+            if (id.equals(user.getId())) {
+               return user;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void modify(Long id, User modifiedUser){
+
+        for (User user : list) {
+            if (id.equals(user.getId())) {
+                user.setFirstname(modifiedUser.getFirstname());
+                user.setLastname(modifiedUser.getLastname());
+                user.setAge(modifiedUser.getAge());
+                user.setGender(modifiedUser.getGender());
+            }
+
+        }
+    }
 }
+
